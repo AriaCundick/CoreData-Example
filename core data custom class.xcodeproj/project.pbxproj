@@ -14,6 +14,7 @@
 		02D0CAC51B2F372E00A59BD9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D0CAC41B2F372E00A59BD9 /* Images.xcassets */; };
 		02D0CAC81B2F372E00A59BD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D0CAC61B2F372E00A59BD9 /* LaunchScreen.xib */; };
 		02D0CAD41B2F372E00A59BD9 /* core_data_custom_classTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0CAD31B2F372E00A59BD9 /* core_data_custom_classTests.swift */; };
+		02D0CADE1B2F468B00A59BD9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0CADD1B2F468B00A59BD9 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		02D0CACD1B2F372E00A59BD9 /* core data custom classTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "core data custom classTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D0CAD21B2F372E00A59BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D0CAD31B2F372E00A59BD9 /* core_data_custom_classTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = core_data_custom_classTests.swift; sourceTree = "<group>"; };
+		02D0CADD1B2F468B00A59BD9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				02D0CAC61B2F372E00A59BD9 /* LaunchScreen.xib */,
 				02D0CABC1B2F372E00A59BD9 /* core_data_custom_class.xcdatamodeld */,
 				02D0CAB81B2F372E00A59BD9 /* Supporting Files */,
+				02D0CADD1B2F468B00A59BD9 /* Users.swift */,
 			);
 			path = "core data custom class";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D0CADE1B2F468B00A59BD9 /* Users.swift in Sources */,
 				02D0CAC01B2F372E00A59BD9 /* ViewController.swift in Sources */,
 				02D0CABE1B2F372E00A59BD9 /* core_data_custom_class.xcdatamodeld in Sources */,
 				02D0CABB1B2F372E00A59BD9 /* AppDelegate.swift in Sources */,
