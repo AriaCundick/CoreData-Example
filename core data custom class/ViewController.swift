@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtPass: UITextField!
+    @IBOutlet weak var uniqueName: UILabel!
     
     var userDatabase = [NSManagedObject]()
     
@@ -27,28 +28,41 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnSave_Clicked(sender: AnyObject) {
-        //get instance of the app delegate
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context:NSManagedObjectContext = appDel.managedObjectContext!
-        
-        //grabs the user entity from the xcDataModel
-        let ent = NSEntityDescription.entityForName("Users", inManagedObjectContext: context)
-        
-        //create var for new user and set the info to be saved
-        var newUser = Users(entity: ent!, insertIntoManagedObjectContext: context)
-        
-        do{
-            newUser.username = txtUser.text
-        }while(!uniqueUsername(newUser.username))
-        
-        newUser.password = txtPass.text
-        
-        //save to core data
-        context.save(nil)
-        
-        //debugging purposes
-        println(newUser)
-        println("saved")
+        if(txtUser.text != "" && txtPass.text != "") {
+            
+            //Remove keyboard from screen
+            txtPass.resignFirstResponder()
+            txtUser.resignFirstResponder()
+            
+            //get instance of the app delegate
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            
+            //grabs the user entity from the xcDataModel
+            let ent = NSEntityDescription.entityForName("Users", inManagedObjectContext: context)
+            
+            //create var for new user and set the info to be saved
+            var newUser = Users(entity: ent!, insertIntoManagedObjectContext: context)
+            
+            if(uniqueUsername(txtUser.text)){
+                newUser.username = txtUser.text
+                }
+            else {
+                return
+            }
+            newUser.password = txtPass.text
+            
+            //save to core data
+            context.save(nil)
+            
+            //transition to log in screen
+            let secondVC: UIViewController = SecondViewController()
+            //self.presentViewController(secondVC, animated: true, completion: nil)
+            
+            //debugging purposes
+            println(newUser)
+            println("saved")
+        }
         
     }
     @IBAction func btnLoad_Clicked(sender: AnyObject) {
@@ -84,16 +98,25 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
     //MARK: - self made methods for extraneous purposes
     
+    
+    //Check if the username is unique
     func uniqueUsername (name: String) -> Bool {
         for users in userDatabase {
             var thisUser = users as! Users
             
             if thisUser.username == name {
+                uniqueName.textColor = UIColor.redColor()
+                uniqueName.text = "Invalid"
                 return false
             }
         }
+        
+        uniqueName.textColor = UIColor.greenColor()
+        uniqueName.text = "Valid"
         
         return true
     }
@@ -113,7 +136,18 @@ class ViewController: UIViewController {
         var results: NSArray = context.executeFetchRequest(fetchRequest, error: nil)!
         
         //Set the found data to a global variable
-        userDatabase = results as! [(NSManagedObject)]
+        userDatabase = (results as! [(NSManagedObject)])
+        
+        
+        //removes an object that is null in the array
+        for var index = 0; index < userDatabase.count; index++ {
+            var thisUser = userDatabase[index] as! Users
+            println(thisUser.username)
+            if thisUser.username == "" {
+                //userDatabase.removeAtIndex(index)
+                println("fffa")
+            }
+        }
         
         //debugging purposes
         for users in userDatabase {
@@ -121,14 +155,13 @@ class ViewController: UIViewController {
             var thisUser = users as! Users
             
             if userDatabase.count > 0 {
-               println("user: \(thisUser.username)")
+              // println("user: \(thisUser.username)")
             }
             
         }
         
-        
-        
-        
+        println("\(userDatabase.count) users found in database")
+
     }
 
 }

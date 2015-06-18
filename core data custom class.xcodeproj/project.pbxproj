@@ -15,6 +15,7 @@
 		02D0CAC81B2F372E00A59BD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D0CAC61B2F372E00A59BD9 /* LaunchScreen.xib */; };
 		02D0CAD41B2F372E00A59BD9 /* core_data_custom_classTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0CAD31B2F372E00A59BD9 /* core_data_custom_classTests.swift */; };
 		02D0CADE1B2F468B00A59BD9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0CADD1B2F468B00A59BD9 /* Users.swift */; };
+		02D0CAE01B2F882800A59BD9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0CADF1B2F882800A59BD9 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		02D0CAD21B2F372E00A59BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D0CAD31B2F372E00A59BD9 /* core_data_custom_classTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = core_data_custom_classTests.swift; sourceTree = "<group>"; };
 		02D0CADD1B2F468B00A59BD9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		02D0CADF1B2F882800A59BD9 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				02D0CABA1B2F372E00A59BD9 /* AppDelegate.swift */,
 				02D0CABF1B2F372E00A59BD9 /* ViewController.swift */,
+				02D0CADF1B2F882800A59BD9 /* SecondViewController.swift */,
 				02D0CAC11B2F372E00A59BD9 /* Main.storyboard */,
 				02D0CAC41B2F372E00A59BD9 /* Images.xcassets */,
 				02D0CAC61B2F372E00A59BD9 /* LaunchScreen.xib */,
@@ -221,6 +224,7 @@
 				02D0CADE1B2F468B00A59BD9 /* Users.swift in Sources */,
 				02D0CAC01B2F372E00A59BD9 /* ViewController.swift in Sources */,
 				02D0CABE1B2F372E00A59BD9 /* core_data_custom_class.xcdatamodeld in Sources */,
+				02D0CAE01B2F882800A59BD9 /* SecondViewController.swift in Sources */,
 				02D0CABB1B2F372E00A59BD9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
